@@ -2,14 +2,24 @@ from kafka.admin import KafkaAdminClient, NewTopic
 from kafka import KafkaConsumer
 from config import *
 
-new_topic = "mytopic"
 admin_client = KafkaAdminClient(bootstrap_servers=BOOTSTRAP_SERVERS)
-new_topics = [NewTopic(name=new_topic, num_partitions=3, replication_factor=1)]
+consumer = KafkaConsumer(bootstrap_servers=[BOOTSTRAP_SERVERS])
 
-existing_topics = KafkaConsumer(bootstrap_servers=[BOOTSTRAP_SERVERS]).topics()
-if new_topic in existing_topics:
-    print('Topic:', new_topic, 'already exists')
+for new_topic in [
+    "avro-topic",
+    "json-topic",
+    "string-topic",
+    "xml-topic",
+]:
+    new_topics = [NewTopic(name=new_topic, num_partitions=3, replication_factor=1),]
 
-else:
-    admin_client.create_topics(new_topics=new_topics, validate_only=False)
-    print('Topic:', new_topic, 'created successfully')
+    existing_topics = consumer.topics()
+    if new_topic in existing_topics:
+        print('Topic:', new_topic, 'already exists')
+
+    else:
+        admin_client.create_topics(new_topics=new_topics, validate_only=False)
+        print('Topic:', new_topic, 'created successfully')
+
+consumer.close()
+admin_client.close()
