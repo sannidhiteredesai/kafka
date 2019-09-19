@@ -1,7 +1,7 @@
 from kafka import KafkaConsumer
 from config import *
 
-topic='mytopic'
+topic='string-topic'
 string_deserializer = lambda x: x.decode('utf-8')
 
 # auto_offset_reset will be used only for the first time when no messages have been
