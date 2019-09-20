@@ -6,10 +6,8 @@ admin_client = KafkaAdminClient(bootstrap_servers=BOOTSTRAP_SERVERS)
 consumer = KafkaConsumer(bootstrap_servers=[BOOTSTRAP_SERVERS])
 
 for new_topic in [
-    "avro-topic",
     "json-topic",
     "string-topic",
-    "xml-topic",
 ]:
     new_topics = [NewTopic(name=new_topic, num_partitions=3, replication_factor=1),]
 
