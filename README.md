@@ -3,7 +3,6 @@
 This project will provide the basic code snippets for interacting with Kafka in following different laungauges:
   - Python
   - Java (...will be available soon)
-  - Scala (...will be available soon)
 
 ### Kafka Setup
 Here I have setup Kafka using docker. The docker file can be found here: [docker-kafka-stack.yml](https://github.com/sannidhiteredesai/kafka/blob/master/kafka_and_python/docker_files/docker-kafka-stack.yml)
@@ -26,11 +25,7 @@ Kafka only supports sending messages in form of bytes. So to convert our complex
 
 The different Serde's which we will be using here are:
   - [String Serde](https://github.com/sannidhiteredesai/kafka/tree/master/kafka_and_python/producer_consumer/serde/string_serde)
-  - [Avro Serde](https://github.com/sannidhiteredesai/kafka/tree/master/kafka_and_python/producer_consumer/serde/avro_serde)
   - [Json Serde](https://github.com/sannidhiteredesai/kafka/tree/master/kafka_and_python/producer_consumer/serde/json_serde)
-  - [Xml Serde](https://github.com/sannidhiteredesai/kafka/tree/master/kafka_and_python/producer_consumer/serde/xml_serde)
-  - [Protobuf Serde](https://github.com/sannidhiteredesai/kafka/tree/master/kafka_and_python/producer_consumer/serde/protobuf_serde)
-  - [Thrift Serde](https://github.com/sannidhiteredesai/kafka/tree/master/kafka_and_python/producer_consumer/serde/thrift_serde)
 
 ### Example message format
 In project we take the example of sending the following data to kafka topic:
