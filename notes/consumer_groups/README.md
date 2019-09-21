@@ -1,3 +1,22 @@
+# List, describe, delete the consumer groups
+
+### List all consumer groups
+bash-4.4# kafka-consumer-groups.sh  --bootstrap-server localhost:9092 --list
+some_consumer_group
+
+### Delete consumer group
+bash-4.4# kafka-consumer-groups.sh --bootstrap-server localhost:9092 --delete --group some_consumer_group
+Deletion of requested consumer groups ('some_consumer_group') was successful.
+
+
+### Describe all consmer groups
+kafka-consumer-groups.sh  --bootstrap-server localhost:9092 --describe --all-groups
+(Output similar to below commands)
+
+### Describe single consumer group
+kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group some_consumer_group --describe
+(Output similar to below commands)
+
 ### List all topics that a consumer group is consuming from with offsets and lag - when consumers are active
 bash-4.4# kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group some_consumer_group --describe
 

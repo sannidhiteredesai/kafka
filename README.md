@@ -5,7 +5,7 @@ This project will provide the basic code snippets for interacting with Kafka in 
   - Java (...will be available soon)
 
 ### Kafka Setup
-Here I have setup Kafka using docker. The docker file can be found here: [docker-kafka-stack.yml](https://github.com/sannidhiteredesai/kafka/blob/master/kafka_and_python/docker_files/docker-kafka-stack.yml)
+Here I have setup Kafka using docker. The docker file can be found here: [docker-kafka-stack.yml](https://github.com/sannidhiteredesai/kafka/blob/master/docker_files/docker-kafka-stack.yml)
 This uses the wurstmeister/zookeeper image for zookeeper and wurstmeister/kafka image for kafka and start 1 container instance each for zookeeper and kafka. Some volumes are also used to persist the topics and messages even if the containers are restarted.
 
 > You can also setup your own standalone Kafka cluster instead of using docker. The instructions for that can be found on [Kafka's official website](https://kafka.apache.org/quickstart)
