@@ -32,3 +32,6 @@ In project we take the example of sending the following data to kafka topic:
 > < Employee Id > < Employee Name > < Employee Salary >
 
 We will see how the same information when stored as string/avro/json/... is converted to bytes to sent to kafka.
+
+### Handling error messages with DLQ
+Let's say we have a Kafka consumer that consumes JSON messages from a source topic. But due to some reason one of the JSON messages on source topic is malformed. This will lead to an exception when the consumer tries to decode the bytes from source topic as JSON. To handle such a scenario weuse DLQs (Dead Letter Queues) and send the malformed JSON messages to DLQ so that the consumer does not stop because of malformed JSONs. The implementation for that can be found [here](https://github.com/sannidhiteredesai/kafka/tree/master/kafka_and_python/producer_consumer/consumer_with_dlq_logic/consumer_with_error_handling.py)
