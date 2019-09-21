@@ -1,10 +1,10 @@
 # List all topics that a consumer group is consuming from with offsets and lag - when consumers are active
 bash-4.4# kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group some_consumer_group --describe
-GROUP               TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                             HOST            CLIENT-ID
-some_consumer_group json-topic      0          20              20              0               kafka-python-1.4.6-fa73d85c-1f44-4c0c-bfdc-637f8a0b26ad /10.255.0.2     kafka-python-1.4.6
-some_consumer_group json-topic      1          26              26              0               kafka-python-1.4.6-fa73d85c-1f44-4c0c-bfdc-637f8a0b26ad /10.255.0.2     kafka-python-1.4.6
-some_consumer_group json-topic      2          36              36              0               kafka-python-1.4.6-fa73d85c-1f44-4c0c-bfdc-637f8a0b26ad /10.255.0.2     kafka-python-1.4.6
-
+| GROUP | TOPIC | PARTITION | CURRENT-OFFSET | LOG-END-OFFSET | LAG | CONSUMER-ID | HOST | CLIENT-ID |
+| ------ | ------ | ------- | -------------- | -------------- | -- | -- | -- | -- |
+|some_consumer_group |json-topic | 0 | 20 | 20 | 0| kafka-python-1.4.6-fa73d85c-1f44-4c0c-bfdc-637f8a0b26ad | /10.255.0.2 | kafka-python-1.4.6 |
+|some_consumer_group |json-topic | 1 | 26 | 26 | 0| kafka-python-1.4.6-fa73d85c-1f44-4c0c-bfdc-637f8a0b26ad | /10.255.0.2 | kafka-python-1.4.6 |
+|some_consumer_group |json-topic | 2 | 36 | 36 | 0| kafka-python-1.4.6-fa73d85c-1f44-4c0c-bfdc-637f8a0b26ad | /10.255.0.2 | kafka-python-1.4.6 |
 
 # List all topics that a consumer group is consuming from with offsets and lag - when consumers are inactive
 bash-4.4# kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group some_consumer_group --describe
