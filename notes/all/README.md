@@ -23,6 +23,9 @@ Major Components in the architecture are:
 - Partitions
 
 ##### Controller/Leader/Follower
+- Controller: Maintains the Kafka administration tasks.
+- Leader: Broker on which a particular partition's main replica is written.
+- Follower: Other brokers which follow the main partition and replicate messages.
 
 ##### Does kafka buffer any messages ?
 Yes on producer as well as consumer side.
@@ -60,8 +63,8 @@ When the log is cleaned up it is done segment wise, so for each closed segement 
 
 ##### Message delivery - atleast/atmost/exactly once
 Good documentation links:
-	- https://kafka.apache.org/documentation/#semantics
-	- https://hevodata.com/blog/kafka-exactly-once/
+- https://kafka.apache.org/documentation/#semantics
+- https://hevodata.com/blog/kafka-exactly-once/
 
 ##### What happens when a new broker is added to the cluster ?
 Nothing happens automatically. Manually a command needs to be executed to mark this broker as leader for one of the partitions and then Kafka will add the new server as a follower of the partition it is migrating from an existing server and allow it to fully replicate the existing data in that partition. When the new server has fully replicated the contents of this partition and joined the in-sync replica one of the existing replicas will delete their partition's data.
@@ -116,3 +119,14 @@ Provides following that is different than the original Apache Kafka distribution
 - Schema Registry
 - KSQL
 - Many connectors for Kafka Connect
+
+##### Kafka Connect
+- https://data-flair.training/blogs/kafka-connect/
+- Example: https://www.tutorialkart.com/apache-kafka/apache-kafka-connector/
+
+##### Kafka Streams
+- https://data-flair.training/blogs/kafka-streams/
+- Example: https://dzone.com/articles/kafka-streams-more-than-just-dumb-storage
+
+##### KSQL
+- https://docs.confluent.io/current/ksql/docs/index.html
